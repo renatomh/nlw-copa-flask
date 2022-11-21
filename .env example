@@ -1,0 +1,25 @@
+# Defining application secret token
+APP_SECRET=secret
+# Defining port, host and URLs
+PORT=8080
+HOST=localhost
+APP_API_URL=http://localhost:8080
+APP_WEB_URL=http://localhost:3000
+
+# Defining the timezone name
+TZ=UTC #UTC, America/Sao_Paulo, US/Central, US/Pacific
+
+# Defining SQL driver
+SQL_DRIVER=mysql
+# SQL credentials
+SQL_HOST=localhost
+SQL_PORT=3306
+SQL_DB=nlw-copa
+SQL_USER=root
+SQL_PASS=example-pass
+
+# Defining push notifications driver
+PUSH_NOTIFICATION_DRIVER=fcm #fcm
+
+# FCM credentials JSON file
+FCM_CREDS_JSON_FILE=service-credentials.json

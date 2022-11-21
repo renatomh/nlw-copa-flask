@@ -1,0 +1,105 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-11-21 12:49-0300\n"
+"PO-Revision-Date: 2022-11-21 12:49-0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: app/__init__.py:91
+msgid "You must provide the 'event' name."
+msgstr ""
+
+#: app/__init__.py:94
+msgid ""
+"You must inform if message should be broadcast ('should_broadcast' flag "
+"as 'true' or 'false')."
+msgstr ""
+
+#: app/__init__.py:98
+msgid "You must inform the session ID ('sid') when not broadcasting."
+msgstr ""
+
+#: app/__init__.py:102
+msgid "You must provide the message content as 'json' to be sent."
+msgstr ""
+
+#: app/__init__.py:117 app/__init__.py:168
+msgid "Message sent successfully"
+msgstr ""
+
+#: app/__init__.py:136
+msgid "You must provide the notification 'title'."
+msgstr ""
+
+#: app/__init__.py:139
+msgid "You must provide the notification 'body'."
+msgstr ""
+
+#: app/__init__.py:142
+msgid ""
+"You must inform if message should be multicast ('should_multicast' flag "
+"as 'true' or 'false')."
+msgstr ""
+
+#: app/__init__.py:147
+msgid "You must inform one token ('token') when not multicasting."
+msgstr ""
+
+#: app/__init__.py:152
+msgid "You must inform a list of tokens ('tokens') when multicasting."
+msgstr ""
+
+#: app/__init__.py:180
+msgid "Resource not found."
+msgstr ""
+
+#: app/__init__.py:184
+msgid "Content too large"
+msgstr ""
+
+#: app/__init__.py:188
+msgid "Ratelimit exceeded"
+msgstr ""
+
+#: app/middleware.py:29 app/middleware.py:34 app/middleware.py:40
+msgid "Authentication failed. Please login to access the resource."
+msgstr ""
+
+#: app/modules/pools/controllers.py:135 app/modules/pools/controllers.py:221
+#: app/modules/pools/controllers.py:262 app/modules/pools/controllers.py:329
+#: app/modules/pools/controllers.py:392
+msgid "Pool not found"
+msgstr ""
+
+#: app/modules/pools/controllers.py:143
+msgid "You've already joined this pool"
+msgstr ""
+
+#: app/modules/pools/controllers.py:324 app/modules/pools/controllers.py:507
+msgid "You must provide both team points"
+msgstr ""
+
+#: app/modules/pools/controllers.py:334 app/modules/pools/controllers.py:512
+msgid "Game not found"
+msgstr ""
+
+#: app/modules/pools/controllers.py:342
+msgid "You're not allowed to create a guess inside this pool"
+msgstr ""
+
+#: app/modules/pools/controllers.py:346
+msgid "You cannot send guesses after the game date"
+msgstr ""
