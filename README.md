@@ -131,12 +131,12 @@ In Linux systems, you can use the following command to check if the server is wo
 (env) $ gunicorn --worker-class eventlet --bind 0.0.0.0:8080 wsgi:app --reload
 ```
 
-The *api-smp.service* file must be updated and placed in the '/etc/systemd/system/' directory. After that, you should execute the following commands to enable and start the service:
+The *nlw-copa.service* file must be updated and placed in the '/etc/systemd/system/' directory. After that, you should execute the following commands to enable and start the service:
 
 ```bash
-$ sudo systemctl start api-smp
-$ sudo systemctl enable api-smp
-$ sudo systemctl status api-smp
+$ sudo systemctl start nlw-copa
+$ sudo systemctl enable nlw-copa
+$ sudo systemctl status nlw-copa
 ```
 
 In order to serve the application with Nginx, it can be configured like so (adjusting the paths, server name, etc.):
@@ -175,7 +175,7 @@ $ sudo apt install snapd # Installs snapd
 $ sudo snap install core; sudo snap refresh core # Ensures snapd version is up to date
 $ sudo snap install --classic certbot # Installs Certbot
 $ sudo ln -s /snap/bin/certbot /usr/bin/certbot # Prepares the Certbot command
-$ sudo certbot --nginx -d api-smp.mhsw.com.br
+$ sudo certbot --nginx -d nlw-copa.mhsw.com.br
 ```
 
 ### Documentation:
