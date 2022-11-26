@@ -36,7 +36,6 @@ class Base(db.Model):
     __abstract__ = True
 
     # Defining base columns
-    id = db.Column(db.String(32), primary_key=True, default=cuid.cuid())
     createdAt = db.Column(db.DateTime, default=db.func.current_timestamp())
     updatedAt = db.Column(db.DateTime, default=db.func.current_timestamp(),
                                         onupdate=db.func.current_timestamp())
@@ -44,6 +43,8 @@ class Base(db.Model):
 # Define a User model using Base columns
 class User(Base):
     __tablename__ = 'user'
+
+    id = db.Column(db.String(32), primary_key=True)
 
     # User Name
     name = db.Column(db.String(256), nullable=False)
@@ -58,6 +59,7 @@ class User(Base):
 
     # New instance instantiation procedure
     def __init__(self, name, email, googleId=None, avatarUrl=None, fcmToken=None):
+        self.id = cuid.cuid()
         self.name = name
         self.email = email
         self.googleId = googleId

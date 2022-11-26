@@ -27,7 +27,6 @@ class Base(db.Model):
     __abstract__ = True
 
     # Defining base columns
-    id = db.Column(db.String(32), primary_key=True, default=cuid.cuid())
     createdAt = db.Column(db.DateTime, default=db.func.current_timestamp())
     updatedAt = db.Column(db.DateTime, default=db.func.current_timestamp(),
                                         onupdate=db.func.current_timestamp())
@@ -35,6 +34,8 @@ class Base(db.Model):
 # Define a Pool model using Base columns
 class Pool(Base):
     __tablename__ = 'pool'
+
+    id = db.Column(db.String(32), primary_key=True)
 
     title = db.Column(db.String(256), nullable=False)
     code = db.Column(db.String(6), nullable=False, unique=True)
@@ -45,6 +46,7 @@ class Pool(Base):
 
     # New instance instantiation procedure
     def __init__(self, title, code, ownerId=None):
+        self.id = cuid.cuid()
         self.title = title
         self.code = code
         self.ownerId = ownerId
@@ -72,6 +74,8 @@ class Pool(Base):
 class Participant(Base):
     __tablename__ = 'participant'
 
+    id = db.Column(db.String(32), primary_key=True)
+
     userId = db.Column(db.String(32), db.ForeignKey('user.id'), nullable=False)
     poolId = db.Column(db.String(32), db.ForeignKey('pool.id'), nullable=False)
     score = db.Column(db.Integer, nullable=False, default=0)
@@ -81,6 +85,7 @@ class Participant(Base):
 
     # New instance instantiation procedure
     def __init__(self, userId, poolId, score=0):
+        self.id = cuid.cuid()
         self.userId = userId
         self.poolId = poolId
         self.score = score
@@ -108,6 +113,8 @@ class Participant(Base):
 class Game(Base):
     __tablename__ = 'game'
 
+    id = db.Column(db.String(32), primary_key=True)
+
     date = db.Column(db.DateTime, nullable=False)
     firstTeamCountryCode = db.Column(db.String(128), nullable=False)
     secondTeamCountryCode = db.Column(db.String(128), nullable=False)
@@ -119,6 +126,7 @@ class Game(Base):
 
     # New instance instantiation procedure
     def __init__(self, date, firstTeamCountryCode, secondTeamCountryCode, firstTeamPoints=None, secondTeamPoints=None):
+        self.id = cuid.cuid()
         self.date = date
         self.firstTeamCountryCode = firstTeamCountryCode
         self.secondTeamCountryCode = secondTeamCountryCode
@@ -148,6 +156,8 @@ class Game(Base):
 class Guess(Base):
     __tablename__ = 'guess'
 
+    id = db.Column(db.String(32), primary_key=True)
+
     firstTeamPoints = db.Column(db.Integer, nullable=False)
     secondTeamPoints = db.Column(db.Integer, nullable=False)
     gameId = db.Column(db.String(32), db.ForeignKey('game.id'), nullable=False)
@@ -156,6 +166,7 @@ class Guess(Base):
 
     # New instance instantiation procedure
     def __init__(self, firstTeamPoints, secondTeamPoints, gameId, participantId, score=0):
+        self.id = cuid.cuid()
         self.firstTeamPoints = firstTeamPoints
         self.secondTeamPoints = secondTeamPoints
         self.gameId = gameId

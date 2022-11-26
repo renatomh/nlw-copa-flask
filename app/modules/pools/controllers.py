@@ -106,7 +106,7 @@ def create_pool():
                     return jsonify({"code": code}), 201
                 
                 # If something goes wrong
-                except Exception as e: return jsonify({"message": e}), 500
+                except Exception as e: return jsonify({"message": str(e)}), 500
 
             # If something goes wrong on data validation
             else:
@@ -160,7 +160,7 @@ def join_pool():
                     return '', 201
 
                 # If something goes wrong
-                except Exception as e: return jsonify({"message": e}), 500
+                except Exception as e: return jsonify({"message": str(e)}), 500
 
             # If something goes wrong on data validation
             else:
@@ -374,7 +374,7 @@ def create_guess(poolId, gameId):
                     return '', 201
 
                 # If something goes wrong
-                except Exception as e: return jsonify({"message": e}), 500
+                except Exception as e: return jsonify({"message": str(e)}), 500
 
             # If something goes wrong on data validation
             else:
@@ -456,7 +456,7 @@ def create_game():
                     return jsonify({"game": game.as_dict()}), 201
 
                 # If something goes wrong
-                except Exception as e: return jsonify({"message": e}), 500
+                except Exception as e: return jsonify({"message": str(e)}), 500
 
             # If something goes wrong on data validation
             else:
@@ -541,7 +541,7 @@ def set_game_result(id):
                     return jsonify({"updatedGame": game.as_dict()}), 200
 
                 # If something goes wrong
-                except Exception as e: return jsonify({"message": e}), 500
+                except Exception as e: return jsonify({"message": str(e)}), 500
 
             # If something goes wrong on data validation
             else:
